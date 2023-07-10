@@ -1,0 +1,5 @@
+node_modules
+/test-app/blog
+/test-app/blog-images
+.idea
+/lib
