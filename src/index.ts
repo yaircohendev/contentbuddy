@@ -5,6 +5,7 @@ import { Dependencies } from "./shared/models/dependencies.model.js";
 import { FetchContent } from "./modules/fetch-content/fetch-content.js";
 import { ParseContent } from "./modules/parse-content/parse-content.js";
 import ContentWriter from "./modules/content-writer/content-writer.js";
+import { ConfigModel } from "./modules/content-config/content-config.model.js";
 
 async function init() {
   const config = await readConfig(argv);
@@ -21,3 +22,5 @@ async function init() {
 }
 
 init();
+
+export type ContentBuddyConfig = ConfigModel;
