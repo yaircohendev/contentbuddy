@@ -7,7 +7,9 @@ import { remark } from "remark";
 export function ParseContent(config: ConfigModel) {
   return {
     async parse(post: string, postName: string) {
-      const imagesPrefixPath = `${config.assetsRootFolder}/${postName}`;
+      const imagesPrefixPath = `${
+        config.assetsFolderPath ?? config.assetsFolder
+      }/${postName}`;
       return await remark()
         .use(remarkMdx)
         .use(remarkFrontmatter)

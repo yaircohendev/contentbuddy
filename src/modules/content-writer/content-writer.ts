@@ -13,7 +13,7 @@ export default function ContentWriter(deps: Dependencies) {
         : "";
       const rootDir = `${process.cwd()}/${configFolder}${root}`;
       const imagesDir = `${process.cwd()}/${configFolder}${
-        deps.config.assetsRootFolder
+        deps.config.assetsFolder
       }`;
       const blogDir = rootDir;
       await upsertDir(imagesDir);
