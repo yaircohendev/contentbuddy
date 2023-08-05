@@ -8,8 +8,13 @@ export default function ContentWriter(deps: Dependencies) {
   return {
     async write(allPosts: IAllPosts) {
       const root = deps.config.contentOutput;
-      const rootDir = `${process.cwd()}/${root}`;
-      const imagesDir = `${process.cwd()}/${deps.config.assetsRootFolder}`;
+      const configFolder = deps.argv.configFolder
+        ? `${deps.argv.configFolder}/`
+        : "";
+      const rootDir = `${process.cwd()}/${configFolder}${root}`;
+      const imagesDir = `${process.cwd()}/${configFolder}${
+        deps.config.assetsRootFolder
+      }`;
       const blogDir = rootDir;
       await upsertDir(imagesDir);
       await upsertDir(blogDir);
